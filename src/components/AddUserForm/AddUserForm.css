@@ -1,0 +1,58 @@
+.add-user {
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 1rem auto;
+}
+
+.add-user h3 {
+    margin: 0 0 0.6rem 0;
+    text-align: center;
+}
+
+.add-user form {
+    width: 100%;
+}
+
+.add-user form .form-group {
+    margin-bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-user form .form-group label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.add-user form .form-group input {
+    padding: 0.3rem 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-user form .form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.add-user form .form-group small {
+    color: #f00;
+    margin-top: 0.2rem;
+}
+
+.add-user form .form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.add-user form .form-group input[type="submit"]:hover {
+    background-color: #026d46;
+}
