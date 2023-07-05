@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# Pesira User Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React.js take-home app project to demonstrate understanding of the library
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Follow the steps below to install and run the application:
+
+## Step 1: Install Node.js and npm
+
 
 ### `npm start`
 
