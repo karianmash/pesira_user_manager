@@ -8,66 +8,60 @@ Follow the steps below to install and run the application:
 
 ## Step 1: Install Node.js and npm
 
+1. Make sure you have Node.js and npm (Node Package Manager) installed on your machine. You can download them from the [Official Node.js website](https://nodejs.org/en/).
 
-### `npm start`
+2. Follow the installation instructions specific to your operating system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Step 2: Clone the repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Open a terminal or command prompt.
 
-### `npm test`
+2. Navigate to the directory where you want to clone the "pesira_user_manager" repository.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Run the following command to clone the repository:
 
-### `npm run build`
+    ```bash
+    git clone git@github.com:karianmash/pesira_user_manager.git
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Step 3: Install project dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Change into the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    cd pesira_user_manager
+    ```
 
-### `npm run eject`
+2. Run the following command to install the project dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    This command will read the "package.json" file and install all the necessary packages listed in it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Step 4: Start the development server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Run the following command to start the development server:
 
-## Learn More
+    ```bash
+    npm start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    This command will start the development server and open the application in your default browser. You should see an output similar to:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        You can now view pesira_user_manager in the browser.
 
-### Code Splitting
+        Local:            http://localhost:3000
+        On Your Network:  http://192.168.100.15:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+        Note that the development build is not optimized.
+        To create a production build, use npm run build.
 
-### Analyzing the Bundle Size
+        webpack compiled successfully
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to see the running "pesira_user_manager" app.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distributed under the MIT License. See `LICENSE` for more information.
