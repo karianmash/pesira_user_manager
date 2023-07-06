@@ -12,7 +12,9 @@ function App() {
   const [displayResponseModal, setDisplayResponseModal] = useState('none');
   const [message, setMessage] = useState('');
   const [responseType, setResponseType] = useState('');
+  const [user, setUser] = useState({});
 
+  // Get users
   useEffect(() => {
     setLoader('block');
 
@@ -31,14 +33,63 @@ function App() {
       });
   }, []); // Empty dependency array to ensure the effect runs only once
 
+  // Add user
   const addUser = (user) => {
     setUsers([...users, user]);
   }
 
+  // Get all users
   const getAllUsers = () => {
     return users;
   }
 
+  // Get a user
+  const getUser = (id) => {
+    setLoader('block');
+
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('User fetched successfully:', data);
+        setUser(data);
+        setLoader('none');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setLoader('none');
+        setDisplayResponseModal('block');
+        setMessage('Failed to fetch user!');
+        setResponseType('Error');
+      });
+  }
+
+  // Update a user
+  const updateUser = (id, formData) => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('User updated successfully:', data);
+        setLoader('none');
+        setDisplayResponseModal('block');
+        setMessage('User updated successfully');
+        setResponseType('Success');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setLoader('none');
+        setDisplayResponseModal('block');
+        setMessage('Failed to update user!');
+        setResponseType('Error');
+      });
+  }
+
+  // Delete a user
   const deleteUser = (id) => {
     setLoader('block');
 
@@ -74,6 +125,9 @@ function App() {
           message={message}
           responseType={responseType}
           deleteUser={deleteUser}
+          getUser={getUser}
+          user={user}
+          updateUser={updateUser}
         />} />
       <Route path="/create-user" element={<AddUser addUser={addUser} />} />
     </Routes>

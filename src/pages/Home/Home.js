@@ -4,11 +4,12 @@ import Header from '../../components/Header/Header';
 import Table from '../../components/Table/Table';
 import UpdateUser from '../../components/Modals/UpdateUser/UpdateUser';
 
-function Home({ getAllUsers, loader, displayResponseModal, setDisplayResponseModal, message, responseType, deleteUser }) {
+function Home({ getAllUsers, loader, displayResponseModal, setDisplayResponseModal, message, responseType, deleteUser, getUser, user, updateUser }) {
     const [displayUpdateModal, setdisplayUpdateModal] = useState('none');
 
     const showUpdateUserModal = (number) => () => {
         setdisplayUpdateModal('block');
+        getUser(number);
     };
 
     const closeModal = () => {
@@ -17,7 +18,7 @@ function Home({ getAllUsers, loader, displayResponseModal, setDisplayResponseMod
 
     return (
         <>
-            <UpdateUser displayUpdateModal={displayUpdateModal} closeModal={closeModal} />
+            <UpdateUser displayUpdateModal={displayUpdateModal} closeModal={closeModal} user={user} updateUser={updateUser} />
             <Header />
             <div className="container">
                 <Table

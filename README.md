@@ -62,6 +62,79 @@ Follow the steps below to install and run the application:
 
 2. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to see the running "pesira_user_manager" app.
 
+## Application Features
+
+The application has the following features:
+
+1. A user can view a list of users.
+
+[![Home Page](public/images/home.png)](public/images/home.png)
+
+2. A user can view a user's details.
+
+[![Edit User Page](public/images/edit.png)](public/images/edit-user.png)
+
+3. A user can edit a user's details.
+
+[![Edit User Page](public/images/edit.png)](public/images/edit-user.png)
+
+4. A user can delete a user.
+
+5. A user can add a new user.
+
+[![Add User Page](public/images/add-user.png)](public/images/add-user.png)
+
+6. The applications includes a loader indicator to show when data is being fetched from the server.
+
+[![Loader Indicator](public/images/loader.png)](public/images/loader.png)
+
+7. Response messages are displayed to the user when an action is performed.
+
+[![Response Message](public/images/response-message.png)](public/images/response-message.png)
+
+8. There's validation of form input fields.
+
+[![Validation](public/images/validation.png)](public/images/validation.png)
+
+## Project Structure
+
+The project structure is as follows:
+
+```bash
+pesira_user_manager
+├── public
+│   ├── images
+│   │   └── ...
+│   ├── favicon.jpg
+│   ├── index.html
+│   └── manifest.json
+├── src
+│   ├── components
+│   │   ├── AddUserForm
+│   │   │   ├── AddUserForm.js
+│   │   ├── Header
+│   │   │   ├── Header.js
+│   │   │   ├── ...
+│   │   ├── Modals
+│   │   │   ├── Loader
+│   │   │   │   ├── Loader.js
+│   │   │   │   ├── ...
+│   │   │   ├── ResponseMessage
+│   │   │   │   ├── ResponseMessage.js
+│   │   │   │   ├── ...
+│   │   │   ├── ...
+│   │   ├── Table
+│   │   │   ├── Table.js
+│   │   │   ├── ...
+│   ├── pages
+│   │   ├── AddUser
+│   │   │   ├── AddUser.js
+│   │   ├── Home
+│   │   │   ├── Home.js
+│   │   │   ├── ...
+│   │   └── ...
+```
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
