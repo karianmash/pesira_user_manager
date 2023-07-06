@@ -1,0 +1,24 @@
+.add-user {
+    background-color: #f0f0f0;
+}
+
+.add-user .modal-header {
+    position: relative;
+    display: flex;
+}
+
+.add-user .modal-header h3 {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.add-user .modal-header span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.4rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}

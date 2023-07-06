@@ -1,3 +1,5 @@
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
 
 import AddUser from './pages/AddUser/AddUser';
@@ -9,9 +11,10 @@ function App() {
 
   return (
     <div>
-      {/* <div className="modal"></div> */}
-      <Home />
-      {/* <AddUser /> */}
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/create-user" component={AddUser} />
+      </Switch>
     </div>
   );
 }

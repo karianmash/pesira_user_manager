@@ -12,9 +12,13 @@ function Home() {
         setdisplayUpdateModal('block');
     };
 
+    const closeModal = () => {
+        setdisplayUpdateModal('none');
+    };
+
     return (
         <>
-            <UpdateUser displayUpdateModal={displayUpdateModal} />
+            <UpdateUser displayUpdateModal={displayUpdateModal} closeModal={closeModal} />
             <Header />
             <div className="container">
                 <Table showUpdateUserModal={showUpdateUserModal} />
