@@ -1,30 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import ResponseMessage from '../Modals/ResponseMessage/ResponseMessage';
+import Loader from '../Modals/Loader/Loader';
 import TableRow from './TableRow';
 
-function TableBody({ showUpdateUserModal }) {
+function TableBody({ showUpdateUserModal, getAllUsers, loader, displayResponseModal, setDisplayResponseModal, message, responseType, deleteUser }) {
+    const users = getAllUsers();
+
+    const closeResponseModal = () => {
+        setDisplayResponseModal('none');
+    };
+
     return (
-        <tbody>
-            <TableRow
-                number="1."
-                fullName="Leanne Graham"
-                username="Bret"
-                email="leannegraham@pesira.io"
-                phone="1-770-736-8031 x56442"
-                company="Romaguera-Crona"
-                address="Kulas Light"
-                showUpdateUserModal={showUpdateUserModal}
+        <>
+            <tbody>
+                {users.map((user) => (
+                    <TableRow
+                        key={user.id}
+                        number={user.id}
+                        fullName={user.name}
+                        username={user.username}
+                        email={user.email}
+                        phone={user.phone}
+                        company={user.company.name}
+                        address={`${user.address.street}, ${user.address.city}`}
+                        showUpdateUserModal={showUpdateUserModal}
+                        deleteUser={deleteUser}
+                    />
+                ))}
+            </tbody>
+
+            <Loader displayLoader={loader} />
+
+            <ResponseMessage
+                displayResponseModal={displayResponseModal}
+                closeResponseModal={closeResponseModal}
+                responseType={responseType}
+                message={message}
             />
-            <TableRow
-                number="2."
-                fullName="Ervin Howell"
-                username="Antonette"
-                email="ervin@yahoo.com"
-                phone="010-692-6593 x09125"
-                company="Crona LLC"
-                address="Victor Plains"
-                showUpdateUserModal={showUpdateUserModal}
-            />
-        </tbody>
+        </>
     );
 }
 

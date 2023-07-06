@@ -3,15 +3,15 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import AddUser from '../../components/AddUserForm/AddUserForm';
 
-function Home() {
+function addUser({ addUser }) {
     return (
         <>
             <Header />
             <div className="container">
-                <AddUser />
+                <AddUser addUser={addUser} />
             </div>
         </>
     );
 }
 
-export default Home;
+export default addUser;

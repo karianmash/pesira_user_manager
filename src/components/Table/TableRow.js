@@ -1,6 +1,10 @@
 import React from 'react';
 
-function TableRow({ number, fullName, username, email, phone, company, address, showUpdateUserModal }) {
+function TableRow({ number, fullName, username, email, phone, company, address, showUpdateUserModal, deleteUser }) {
+    const handleDeleteUser = (number) => () => {
+        deleteUser(number);
+    };
+
     return (
         <tr>
             <td>{number}</td>
@@ -13,7 +17,7 @@ function TableRow({ number, fullName, username, email, phone, company, address, 
             <td>
                 <div className="btn-group">
                     <button className="btn btn-edit" onClick={showUpdateUserModal(number)}>Edit</button>
-                    <button className="btn btn-delete">Delete</button>
+                    <button className="btn btn-delete" onClick={handleDeleteUser(number)}>Delete</button>
                 </div>
             </td>
         </tr>
