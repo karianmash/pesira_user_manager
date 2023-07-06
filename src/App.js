@@ -1,4 +1,5 @@
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
@@ -10,12 +11,10 @@ function App() {
   }
 
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/create-user" component={AddUser} />
-      </Switch>
-    </div>
+    <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route path="/create-user" element={<AddUser />} />
+    </Routes>
   );
 }
 
