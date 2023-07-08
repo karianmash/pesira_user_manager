@@ -9,6 +9,15 @@ function AddUser({ addUser }) {
     const [responseType, setResponseType] = useState('');
     const [loader, setLoader] = useState('none');
     const [formErrors, setFormErrors] = useState({});
+    const [formData, setFormData] = useState({
+        name: '',
+        username: '',
+        email: '',
+        phone: '',
+        company: '',
+        address: '',
+        city: ''
+    });
 
     const closeResponseModal = () => {
         setDisplayResponseModal('none');
@@ -85,6 +94,15 @@ function AddUser({ addUser }) {
                 .then((data) => {
                     console.log('Post request successful:', data);
                     addUser(data);
+                    setFormData({
+                        name: '',
+                        username: '',
+                        email: '',
+                        phone: '',
+                        company: '',
+                        address: '',
+                        city: ''
+                    });
                     setLoader('none');
                     setDisplayResponseModal('block');
                     setMessage('User added successfully');
@@ -107,37 +125,38 @@ function AddUser({ addUser }) {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Full Name</label>
-                        <input type="text" className="form-control" id="name" placeholder="Enter full name" />
+                        <input type="text" className="form-control" id="name" placeholder="Enter full name" value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                         {formErrors.name && <small className="error-message">{formErrors.name}</small>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="username">Username</label>
-                        <input type="text" className="form-control" id="username" placeholder="Enter username" />
+                        <input type="text" className="form-control" id="username" placeholder="Enter username" value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} />
                         {formErrors.username && <small className="error-message">{formErrors.username}</small>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter email" />
+                        <input type="email" className="form-control" id="email" placeholder="Enter email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                         {formErrors.email && <small className="error-message">{formErrors.email}</small>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="phone">Phone</label>
-                        <input type="text" className="form-control" id="phone" placeholder="Enter phone" />
+                        <input type="text" className="form-control" id="phone" placeholder="Enter phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
                         {formErrors.phone && <small className="error-message">{formErrors.phone}</small>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="company">Company Name</label>
-                        <input type="text" className="form-control" id="company" placeholder="Enter company" />
+                        <input type="text" className="form-control" id="company" placeholder="Enter company" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} />
                         {formErrors.company && <small className="error-message">{formErrors.company}</small>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="address">Street Address</label>
-                        <input type="text" className="form-control" id="address" placeholder="Enter address" />
+                        <input type="text" className="form-control" id="address" placeholder="Enter address" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} />
                         {formErrors.street && <small className="error-message">{formErrors.street}</small>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="city">City</label>
-                        <input type="text" className="form-control" id="city" placeholder="Enter city" />
+                        <input type="text" className="form-control" id="city" placeholder="Enter city" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} />
                         {formErrors.city && <small className="error-message">{formErrors.city}</small>}
                     </div>
                     <div className="form-group">

@@ -87,6 +87,29 @@ function App() {
         setMessage('Failed to update user!');
         setResponseType('Error');
       });
+
+    // Update user locally
+    // const updatedUsers = users.map((user) => {
+    //   if (user.id === id) {
+    //     setLoader('none');
+    //     setDisplayResponseModal('block');
+    //     setMessage('User updated successfully');
+    //     setResponseType('Success');
+    //     return {
+    //       ...user,
+    //       ...formData,
+    //     };
+    //   } else {
+    //     setDisplayResponseModal('block');
+    //     setMessage('Failed to update user!');
+    //     setResponseType('Error');
+    //     setLoader('none');
+    //   }
+
+    //   return user;
+    // });
+    // setUsers(updatedUsers);
+    // return true;
   }
 
   // Delete a user
